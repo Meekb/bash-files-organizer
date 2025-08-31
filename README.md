@@ -16,6 +16,7 @@ It moves files from a source folder into subfolders inside a target folder based
 
 ## About
 The File Organizer helps keep your folders clean by automatically sorting files into subfolders based on their file extensions.  
+
 For example: `.txt` files go into a `txt/` folder, `.jpg` files into a `jpg/` folder, and files without an extension are placed in `no-ext-files/`.
 
 ---
@@ -41,8 +42,12 @@ Files without an extension are placed in no-ext-files.
 
 ## Installation
 ### Clone the repository
-git clone git@github.com:Meekb/bash-files-organizer.git
-cd bash-file-organizer
+- `git clone git@github.com:Meekb/bash-files-organizer.git`
+- `cd bash-file-organizer`
+- Open the `./unorganized` directory and look at the files
+- Open `./files_organizer.sh`
+  - Change the value of `USER` to your username 
+
 
 ### Make the script executable
 ```bash

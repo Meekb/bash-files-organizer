@@ -30,7 +30,8 @@ Creates subfolders like png, pdf, txt, etc.
 Files without an extension are placed in no-ext-files.
 
 ####  Safety:
-The script uses `${ORGANIZED:?}` so it will exit if the organized path is empty preventing accidental `rm -rf /*`
+- The script first `copies` the files from `./unorganized` into `./organized`  
+- Uses `${ORGANIZED:?}` so it will `exit` if the organized path is empty - preventing accidental `rm -rf /*`
 
 ## Requirements
 - Bash 4+
@@ -40,7 +41,7 @@ The script uses `${ORGANIZED:?}` so it will exit if the organized path is empty 
 
 ## Installation
 ### Clone the repository
-git clone https://gitlab.com/your-namespace/bash-file-organizer.git
+git clone git@github.com:Meekb/bash-files-organizer.git
 cd bash-file-organizer
 
 ### Make the script executable

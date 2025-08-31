@@ -10,9 +10,7 @@ It moves files from a source folder into subfolders inside a target folder based
 - [Usage](#usage)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+- [Example](#example)
 
 ---
 
@@ -31,8 +29,14 @@ Creates subfolders like png, pdf, txt, etc.
 
 Files without an extension are placed in no-ext-files.
 
-## Safety
+####  Safety:
 The script uses `${ORGANIZED:?}` so it will exit if the organized path is empty preventing accidental `rm -rf /*`
+
+## Requirements
+- Bash 4+
+  - macOS 13+ includes this by default
+  - For older macOS: install via Homebrew
+    -  `brew install bash`
 
 ## Installation
 ### Clone the repository

@@ -1,0 +1,7 @@
+This is a text document!
+
+Replace or add to this document using `bash echo >` or `bash echo >>`
+
+Enjoy
+
+

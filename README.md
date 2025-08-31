@@ -1,0 +1,71 @@
+# File Organizer (bash)
+
+A simple Bash script that organizes files by extension.  
+It moves files from a source folder into subfolders inside a target folder based on their file type.
+
+---
+
+## Table of Contents
+- [About](#about)
+- [Usage](#usage)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## About
+The File Organizer helps keep your folders clean by automatically sorting files into subfolders based on their file extensions.  
+For example: `.txt` files go into a `txt/` folder, `.jpg` files into a `jpg/` folder, and files without an extension are placed in `no-ext-files/`.
+
+---
+
+## Usage
+
+```bash
+./files_organizer.sh ./unorganized ./organized
+```
+Creates subfolders like png, pdf, txt, etc.
+
+Files without an extension are placed in no-ext-files.
+
+## Safety
+The script uses `${ORGANIZED:?}` so it will exit if the organized path is empty preventing accidental `rm -rf /*`
+
+## Installation
+### Clone the repository
+git clone https://gitlab.com/your-namespace/bash-file-organizer.git
+cd bash-file-organizer
+
+### Make the script executable
+```bash
+chmod +x files_organizer.sh
+```
+
+## Example
+
+### Before
+unorganized/  
+├── document.txt  
+├── photo1.jpeg  
+├── photo2.jpeg  
+├── report.pdf  
+├── script
+
+### Run
+`./files_organizer.sh ./bash_unorganized ./bash_organized
+`
+
+### After
+organized/  
+├── txt/  
+│   └── document.txt  
+├── jpeg/  
+│   ├── photo1.jpeg  
+│   └── photo2.jpeg  
+├── pdf/  
+│   └── report.pdf  
+└── no-ext-files/  
+└── script

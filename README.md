@@ -19,6 +19,9 @@ The File Organizer helps keep your folders clean by automatically sorting files 
 
 For example: `.txt` files go into a `txt/` folder, `.jpg` files into a `jpg/` folder, and files without an extension are placed in `no-ext-files/`.
 
+**Note:** In this demo, files are *copied* from the unorganized folder so the original files remain intact.  
+In a real usage scenario, you can switch `cp` to `mv` to actually move the files instead of duplicating them.
+
 ---
 
 ## Usage

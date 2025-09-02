@@ -12,9 +12,9 @@ echo "Hello $USER!"
 # 1. Clear out the organized folder
 echo "** 1 **"
 echo "Clearing out $ORGANIZED"
-#:? means - if $ORGANIZED is unset or empty, Bash will throw an error and exit
-# otherwise it will sub an empty string which will tell Bash to delete from root /* which would be catastrophic
-rm -rf "${ORGANIZED:?}"/*
+rm -rf "${ORGANIZED:?}"/* # :? means if $ORGANIZED is unset or empty, Bash will throw an error and exit
+# otherwise it will sub an empty string which will tell Bash to delete from root /* which would be catastrophic!
+
 echo "Current contents of $ORGANIZED:"
 ls -l "$ORGANIZED"
 echo
@@ -33,17 +33,17 @@ echo "mkdir for each file type"
 declare -A filetypes
 
 for file in "${ORGANIZED:?}"/*; do
-  # ${file##*.} → strips off everything up to the last dot in the filename, leaving just the extension
-  # Important: the dot itself is consumed by the pattern *., so the result has NO leading dot
+  # ${file##*.} ## strips off (longest) everything up to the last dot in the filename, leaving just the extension
+  # Important: the dot itself is consumed by the pattern *. so the result has NO leading dot
   # Example: my.photo.JPG → JPG,  file.png → png
   ext="${file##*.}"
 
-  # ${ext,,} → converts the value to all lowercase (Bash 4+)
-  # Example: JPG → jpg
+  # ${ext,,} ,, converts the value to all lowercase (Bash 4+)
+  # Example: JPG becomes jpg
   ext="${ext,,}"
 
-  # basename → strip directories, leaving just the filename
-  # Example: /Users/me/file.txt → file.txt
+  # basename strips directories, leaving just the filename
+  # Example: basename /Users/me/file.txt is file.txt
   name="$(basename "$file")"
   echo "NAME: $name"
   # If no dot in the filename, treat as "no-ext-files"

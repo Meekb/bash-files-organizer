@@ -46,10 +46,12 @@ for file in "${ORGANIZED:?}"/*; do
   # Example: basename /Users/me/file.txt is file.txt
   name="$(basename "$file")"
   echo "NAME: $name"
+  
   # If no dot in the filename, treat as "no-ext-files"
   if [[ "$name" == "${name%.*}" ]]; then
     ext="no-ext-files"
   fi
+  
   # bump count for this extension
   (( filetypes["$ext"]++ ))
 done

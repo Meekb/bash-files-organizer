@@ -65,18 +65,20 @@ for ext in "${!filetypes[@]}"; do
     echo "MAKING /no-ext-files"
     echo
     mkdir /"no-ext-files"
+    
     # Set permissions for mv
     chmod u="rwx" "$ORGANIZED"/"$ext"
   fi
   echo "MAKING $ext"
   mkdir "$ORGANIZED"/"$ext"
+  
   # Set permissions for mv
   chmod u="rwx" "$ORGANIZED"/"$ext"
 done
 echo
 
 # Move files into their extension folders inside $ORGANIZED
-# shopt means `set nullglob` - when you use a wildcard (* or ?) that doesnt match anything,
+# `shopt -s nullglob` means set nullglob so when you use a wildcard (* or ?) that doesnt match anything,
 # instead of leaving the literal pattern, Bash substitutes nothing (a null string)
 shopt -s nullglob
 
@@ -93,6 +95,7 @@ for file in "${ORGANIZED:?}"/*; do
   fi
 
   dest="${ORGANIZED%/}/$ext"
+  
   # as extra insurance, safely check dir exists before moving file
   mkdir -p "$dest" # `-p` create the whole path if necessary
 

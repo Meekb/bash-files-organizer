@@ -1,4 +1,4 @@
-# File Organizer (bash)
+# File Organizer
 
 A simple Bash script that organizes files by extension.  
 It moves files from a source folder into subfolders inside a target folder based on their file type.
